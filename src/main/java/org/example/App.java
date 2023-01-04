@@ -18,10 +18,13 @@ public class App {
 
             session.beginTransaction();
 
-            Person person = session.get(Person.class, 1);
+            Person person1 = new Person("TEst1", 30);
+            Person person2 = new Person("TEst2", 40);
+            Person person3 = new Person("TEst3", 50);
 
-            System.out.println(person.getName());
-            System.out.println(person.getAge());
+            session.save(person1);
+            session.save(person2);
+            session.save(person3);
 
             session.getTransaction().commit();
         } finally {
